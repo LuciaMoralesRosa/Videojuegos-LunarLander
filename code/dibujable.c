@@ -38,9 +38,6 @@ void destruirDibujable(struct Dibujable* dibujable) {
         free(dibujable -> puntos);
     }
     if(dibujable -> aristas != NULL) {
-        for(uint8_t i = 0; i < dibujable -> num_aristas; i++){
-            destruirArista(&dibujable -> aristas[i]);
-        }
         free(dibujable -> aristas);
     }
     free(dibujable);
