@@ -71,7 +71,7 @@ struct Dibujable {
  * @param num_aristas Numero de aristas que conforman el objeto 
  */
 struct DibujableConstante {
-    struct Punto origen;
+    struct Punto origen; // Esquina derecha superior
     struct Punto* puntos; 
     struct UnionAristas* unionAristas;
     uint8_t num_puntos;
