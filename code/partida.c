@@ -8,8 +8,14 @@
 #define fuel_por_moneda 500
 #define masa_nave 1000
 
-#define aterrizaje_perfecto 0.5
-#define aterrizaje_brusco 1
+//#define aterrizaje_perfecto_vel 0.5
+//#define aterrizaje_brusco_vel 1
+#define aterrizaje_perfecto_vel 0.5
+#define aterrizaje_brusco_vel 1
+
+#define aterrizaje_perfecto_rot 5
+#define aterrizaje_brusco_rot 10
+
 
 int inicio = 0;
 
@@ -55,14 +61,23 @@ void escalar_escena_partida(float factor_x, float factor_y){
 
 uint16_t evaluar_aterrizaje(uint8_t bonificador){
 	uint16_t puntuacion = 0;
+	printf("Rotacion de la nave: %d\n", nave->rotacion);
 
-	if(nave->velocidad[1] > -aterrizaje_perfecto && (aterrizaje_perfecto > nave->velocidad[0] && nave->velocidad[0] > -aterrizaje_perfecto)) {
+	if(nave->velocidad[1] > -aterrizaje_perfecto_vel &&
+		aterrizaje_perfecto_vel > nave->velocidad[0] &&
+		nave->velocidad[0] > -aterrizaje_perfecto_vel &&
+		(nave->rotacion < aterrizaje_perfecto_rot ||
+		nave->rotacion > 360 - aterrizaje_perfecto_rot)) {
 		// Aterrizaje perfecto
 		printf("Aterrizaje perfecto\n");
 		puntuacion = 50 * bonificador;
 		combustible += 50;
 	}
-	else if(nave->velocidad[1] > -aterrizaje_brusco && (aterrizaje_brusco > nave->velocidad[0] && nave->velocidad[0] > -aterrizaje_brusco)) {
+	else if(nave->velocidad[1] > -aterrizaje_brusco_vel &&
+			aterrizaje_brusco_vel > nave->velocidad[0] &&
+			nave->velocidad[0] > -aterrizaje_brusco_vel &&
+			(nave->rotacion < aterrizaje_brusco_rot || 
+			nave->rotacion > 360 - aterrizaje_brusco_rot)) {
 		// Aterrizaje brusco
 		printf("Aterrizaje brusco\n");
 		puntuacion = 15 * bonificador;
