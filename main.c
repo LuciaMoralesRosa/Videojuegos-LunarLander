@@ -3,6 +3,7 @@
 #include "resources/superficie_lunar.h"
 #include "code/gestor_plataformas.h"
 #include "code/variables_globales.h"
+#include "resources/torreta.h"
 
 #include <stdio.h>
 #include <windows.h>
@@ -46,6 +47,20 @@ void AttachConsoleToStdout() {
  * @param hdc
  */
 void pruebasDibujables(HDC hdc){
+
+    struct Dibujable* base = crearDibujable(&Torreta_base);
+    colocar_dibujable(base, (struct Punto){50, 50});
+    dibujarDibujable(hdc, base);
+
+    struct Dibujable* dcha = crearDibujable(&Torreta_dcha);
+    escalar_dibujable_en_escena_dados_ejes(dcha, 5, 5);
+    colocar_dibujable(dcha, (struct Punto){100, 100});
+    dibujarDibujable(hdc, dcha);
+
+    struct Dibujable* i = crearDibujable(&Torreta_izda);
+    escalar_dibujable_en_escena_dados_ejes(i, 5, 5);
+    colocar_dibujable(i, (struct Punto){150, 150});
+    dibujarDibujable(hdc, i);
 }
 
 
