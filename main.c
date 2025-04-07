@@ -4,6 +4,7 @@
 #include "code/gestor_plataformas.h"
 #include "code/variables_globales.h"
 #include "resources/torreta.h"
+#include "resources/asteroides.h"
 
 #include <stdio.h>
 #include <windows.h>
@@ -48,19 +49,14 @@ void AttachConsoleToStdout() {
  */
 void pruebasDibujables(HDC hdc){
 
-    struct Dibujable* base = crearDibujable(&Torreta_base);
+    struct Dibujable* base = crearDibujable(&Asteroide_pequeno);
     colocar_dibujable(base, (struct Punto){50, 50});
     dibujarDibujable(hdc, base);
 
-    struct Dibujable* dcha = crearDibujable(&Torreta_dcha);
-    escalar_dibujable_en_escena_dados_ejes(dcha, 5, 5);
-    colocar_dibujable(dcha, (struct Punto){100, 100});
-    dibujarDibujable(hdc, dcha);
+    struct Dibujable* base2 = crearDibujable(&Asteroide_grande);
+    colocar_dibujable(base2, (struct Punto){150, 150});
+    dibujarDibujable(hdc, base2);
 
-    struct Dibujable* i = crearDibujable(&Torreta_izda);
-    escalar_dibujable_en_escena_dados_ejes(i, 5, 5);
-    colocar_dibujable(i, (struct Punto){150, 150});
-    dibujarDibujable(hdc, i);
 }
 
 

@@ -1,0 +1,22 @@
+#ifndef ASTEROIDES_H
+#define ASTEROIDES_H
+
+#include "../code/dibujable.h"
+
+#define CENTRO_ASTEROIDE_PEQUENO {ALTURA_ASTEROIDE_PEQUENO/2, ANCHURA_ASTEROIDE_PEQUENO/2}
+#define CENTRO_ASTEROIDE_MEDIANO {ALTURA_ASTEROIDE_MEDIANO/2, ANCHURA_ASTEROIDE_MEDIANO/2}
+#define CENTRO_ASTEROIDE_GRANDE {ALTURA_ASTEROIDE_GRANDE/2, ANCHURA_ASTEROIDE_GRANDE/2}
+
+
+#define ANCHURA_ASTEROIDE_GRANDE 54
+#define ALTURA_ASTEROIDE_GRANDE 54
+#define ANCHURA_ASTEROIDE_MEDIANO 31
+#define ALTURA_ASTEROIDE_MEDIANO 31
+#define ANCHURA_ASTEROIDE_PEQUENO 18
+#define ALTURA_ASTEROIDE_PEQUENO 18
+
+extern const struct DibujableConstante Asteroide_grande;
+extern const struct DibujableConstante Asteroide_mediano;
+extern const struct DibujableConstante Asteroide_pequeno;
+
+#endif // ASTEROIDES_H
