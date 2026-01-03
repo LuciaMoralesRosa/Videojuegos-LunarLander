@@ -1,19 +1,32 @@
-# Videojuegos-LunarLander
-Implementación del juego Lunar Lander para la asignatura de Videojuegos.
+# Lunar Lander Clone | C & Win32 API
+Implementación del clásico arcade Lunar Lander (Atari, 1978) desarrollada 
+para la asignatura de Videojuegos. El proyecto se centra en la programación 
+de bajo nivel y la simulación física vectorial.
 
-Es posible jugar descargando el fichero lunar_lander.exe
+## Caracteristicas principales
+Este clon incluye:
+- Motor Gráfico Propio: Desarrollado en C utilizando exclusivamente windows.h
+  para el renderizado y math.h para el cálculo vectorial.
+- Piloto Automático (IA): Implementación de una Inteligencia Artificial basada
+  en reglas capaz de aterrizar la nave de forma autónoma calculando trayectorias
+  y propulsión.
+- Sistema de Menús: Interfaz de configuración añadida para mejorar la experiencia
+  de usuario (UX).
+- Física Vectorial: Simulación de gravedad, inercia y colisiones en un entorno 2D.
 
-Lunar Lander es un juego 2D vectorial de simulación espacial tipo arcade
-desarrollado por Atari en 1978. En esta asignatura se ha desarrollado un
-clon empleando el lenguaje de programación C y únicamente las librerías
-windows.h y math.h.
+## Como jugar
+Puedes probar el juego directamente sin necesidad de compilar:
+1. Descarga el archivo lunar_lander.exe.
+2. Ejecuta el archivo en un entorno Windows.
 
-Al juego original se le han añadido algunas mejoras como los menús de
-configuración y una interligencia artifical por reglas que permite a la 
-nave aterrizar en piloto automático.
+## Comparativa visual
+### Versión Desarrollada
+<img width="1020" alt="Lunar Lander Clon" src="https://github.com/user-attachments/assets/fec534ca-c79d-4fd0-aaac-8cf3df96d6d6" />
 
-Imagen inicial del clon creado:
-<img width="1020" height="767" alt="image" src="https://github.com/user-attachments/assets/fec534ca-c79d-4fd0-aaac-8cf3df96d6d6" />
+### Versión Original (Atari, 1978)
+<img width="1020" alt="Lunar Lander Original" src="https://github.com/user-attachments/assets/66bf4588-b7bc-4b51-9582-939ddfc485ef" />
 
-Imagen del juego original:
-<img width="1256" height="1028" alt="image" src="https://github.com/user-attachments/assets/66bf4588-b7bc-4b51-9582-939ddfc485ef" />
+## Tecnologías utilizadas
+- Lenguaje: C
+- Librerías: windows.h (Win32 API), math.h
+- Entorno: Visual Studio / MinGW
